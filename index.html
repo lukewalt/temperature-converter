@@ -5,8 +5,8 @@
     <title>Temperature Converter</title>
   </head>
   <body>
-    <input type="text" name="temp"></input>
-    <button type="button" name="converter" onclick="clear()">clear</button>
+    <input type="text" name="temp" onkeyup="inputKeyUp(event)"></input>
+    <button type="button" name="clear" onclick="clear()">clear</button>
     <input type="radio" name="c/f_select" value="celsius">Celsius</input>
     <input type="radio" name="c/f_select" value="fahrenheit">Fahrenheit</input>
     <button type="button" name="converter" onclick="determineConverter()">Convert</button>
