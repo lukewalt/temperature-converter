@@ -28,21 +28,21 @@ function determineConverter (clickEvent) {
   console.log(cf_select);
   if(cf_select.value === "celsius") {
     toCelsius();
-  } else if (cf_select.value === "fahrenheit") {
+  } else {
     toFahrenheit();
   }
 }
 
-
 // Assign a function to be executed when the button is clicked
 convButton.addEventListener("click", determineConverter);
 
+// event handler to the input field that checks if the user pressed the enter key
 
-// [color the value] document.getElementById("myH2").style.color = "#ff0000";
-//event handler that detects if 'enter' was pressed
-// function inputKeyUp(e) {
-//     e.which = e.which || e.keyCode;
-//     if(e.which == 13) {
-//         // submit
-//     }
-// }
+function pressEnter(e) {
+  if(e.keyCode == 13){
+    determineConverter();
+  }
+}
+
+// function to be executed when the user clicks enter
+userInput.addEventListener("keypress", pressEnter);
