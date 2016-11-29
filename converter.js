@@ -1,13 +1,28 @@
+
+var clearUserInput = function() {
+  document.getElementById('user-input').value = "";
+}
+
 function toCelsius (num) {
-  return (num - 32) / 1.8
+  num = document.getElementById('user-input').value;
+  document.getElementById('conv-temp').innerHTML = (num - 32) / 1.8;
 }
 
 function toFahrenheit (num) {
-  return (num * 1.8) + 32;
+  num = document.getElementById('user-input').value;
+  document.getElementById('conv-temp').innerHTML = (num * 1.8) + 32;
 }
+
 
 // Get a reference to the button element in the DOM
 var convButton = document.getElementById("converter");
+
+// This function should determine which conversion should
+// happen based on which radio button is selected.
+function determineConverter (clickEvent) {
+  console.log("event", clickEvent);
+
+}
 
 //event handler that detects if 'enter' was pressed
 function inputKeyUp(e) {
@@ -16,15 +31,9 @@ function inputKeyUp(e) {
         // submit
     }
 }
-// This function should determine which conversion should
-// happen based on which radio button is selected.
-function determineConverter (clickEvent) {
-  console.log("event", clickEvent);
-
-}
 
 // Assign a function to be executed when the button is clicked
-button.addEventListener("click", determineConverter);
+//button.addEventListener("click", determineConverter);
 
 
 
