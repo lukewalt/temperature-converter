@@ -12,29 +12,31 @@ var clearUserInput = function() {
 
 function toCelsius (num) {
   num = userInput.value;
-  convtdTemp.innerHTML = (num - 32) / 1.8;
+  var c = (num - 32) / 1.8;
   // condition for color
-    if (convtdTemp > 32) {
+    if (c > 32) {
       document.getElementById("conv-temp").style.color = "red";
-    } else if (convtdTemp < 0) {
+    } else if (c < 0) {
       document.getElementById("conv-temp").style.color = "blue";
     } else {
       document.getElementById("conv-temp").style.color = "green";
     }
-
+    convtdTemp.innerHTML = c;
 }
 
 function toFahrenheit (num) {
   num = userInput.value;
-  convtdTemp.innerHTML = (num * 1.8) + 32;
+  var f = (num * 1.8) + 32;
   // condition for color
-    if (convtdTemp > 90) {
+    if (f > 90) {
       document.getElementById("conv-temp").style.color = "red";
-    } else if (convtdTemp < 32) {
+    } else if (f < 32) {
       document.getElementById("conv-temp").style.color = "blue";
     } else {
       document.getElementById("conv-temp").style.color = "green";
     }
+    convtdTemp.innerHTML = f;
+
 }
 
 // This function should determine which conversion should
