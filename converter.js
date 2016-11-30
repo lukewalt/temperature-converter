@@ -13,11 +13,28 @@ var clearUserInput = function() {
 function toCelsius (num) {
   num = userInput.value;
   convtdTemp.innerHTML = (num - 32) / 1.8;
+  // condition for color
+    if (convtdTemp > 32) {
+      document.getElementById("conv-temp").style.color = "red";
+    } else if (convtdTemp < 0) {
+      document.getElementById("conv-temp").style.color = "blue";
+    } else {
+      document.getElementById("conv-temp").style.color = "green";
+    }
+
 }
 
 function toFahrenheit (num) {
   num = userInput.value;
   convtdTemp.innerHTML = (num * 1.8) + 32;
+  // condition for color
+    if (convtdTemp > 90) {
+      document.getElementById("conv-temp").style.color = "red";
+    } else if (convtdTemp < 32) {
+      document.getElementById("conv-temp").style.color = "blue";
+    } else {
+      document.getElementById("conv-temp").style.color = "green";
+    }
 }
 
 // This function should determine which conversion should
@@ -26,7 +43,7 @@ function toFahrenheit (num) {
 function determineConverter (clickEvent) {
   var cf_select = document.querySelector("input[name='cf_select']:checked").value;
   console.log(cf_select);
-  if(cf_select.value === "celsius") {
+  if(cf_select === "celsius") {
     toCelsius();
   } else {
     toFahrenheit();
